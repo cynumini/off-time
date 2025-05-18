@@ -1,0 +1,8 @@
+[Unit]
+Description=off-time timer
+
+[Timer]
+OnCalendar={s}
+
+[Install]
+WantedBy=timers.target
