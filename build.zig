@@ -16,6 +16,14 @@ pub fn build(b: *std.Build) void {
         .root_module = exe_mod,
     });
 
+    const sakana = b.dependency("sakana", .{
+        .target = target,
+        .optimize = optimize,
+        .linux_display_backend = .Both,
+    });
+
+    exe.root_module.addImport("sakana", sakana.module("sakana"));
+
     b.installArtifact(exe);
 
     const run_cmd = b.addRunArtifact(exe);

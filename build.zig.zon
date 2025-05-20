@@ -36,6 +36,9 @@
     // Once all dependencies are fetched, `zig build` no longer requires
     // internet connectivity.
     .dependencies = .{
+        .sakana = .{
+            .path = "sakana",
+        },
         // See `zig fetch --save <url>` for a command-line interface for adding dependencies.
         //.example = .{
         //    // When updating this field to a new URL, be sure to delete the corresponding
@@ -65,6 +68,10 @@
         //    // actually used.
         //    .lazy = false,
         //},
+        .raylib = .{
+            .url = "https://github.com/raysan5/raylib/archive/refs/heads/master.tar.gz",
+            .hash = "raylib-5.5.0-whq8uPbNNAQ1ixfyTEA6FhZsDdCpIaIbZaUSlRHP-xl2",
+        },
     },
 
     // Specifies the set of files and directories that are included in this package.
