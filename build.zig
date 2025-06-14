@@ -19,7 +19,8 @@ pub fn build(b: *std.Build) void {
     const sakana = b.dependency("sakana", .{
         .target = target,
         .optimize = optimize,
-        .linux_display_backend = .Both,
+        .raylib = true,
+        .fontconfig = true,
     });
 
     exe.root_module.addImport("sakana", sakana.module("sakana"));
